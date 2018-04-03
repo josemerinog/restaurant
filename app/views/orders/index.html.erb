@@ -1,0 +1,35 @@
+<!-- <h1>Orders#index</h1>
+<p>Find me in app/views/orders/index.html.erb</p> -->
+ <!-- <%= @orders.inspect %> -->
+<h2>Ordenes</h2>
+
+<%= link_to "Nueva Orden", new_order_path %>
+
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Mesero</th>
+      <th>Mesa</th>
+      <th>Detalle</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.waiter %></td>
+      <td><%= order.board %></td>
+      <td><%= link_to "D", order_path(order) %></td>
+      <td><%=  link_to "E", edit_order_path(order) %></td>
+       <td><%= link_to "X", order_path(order), method: :delete, data: {confirm: "Estas seguro?"} %></td>
+      <td><%= %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
