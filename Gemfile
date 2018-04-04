@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'devise'
+gem 'devise-bootstrap-views'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'seed_dump'
@@ -49,7 +50,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'annotate'
-  gem 'spirit_hands'
+#  gem 'spirit_hands'
 
 end
 

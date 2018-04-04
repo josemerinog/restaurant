@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+before_action :authenticate_user!
+
   def index
     @orders = Order.all
   end
@@ -12,6 +14,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    #byebug
     @order = Order.new(order_params)
     if @order.save
       redirect_to @order # => vuelve al order_path(@order.id)
@@ -44,7 +47,7 @@ class OrdersController < ApplicationController
 private
 
 def order_params
-  params.require(:order).permit(:board, :waiter)
+  params.require(:order).permit(:board, :user_id)
 
 end
 
