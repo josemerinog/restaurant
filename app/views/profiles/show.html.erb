@@ -1,0 +1,17 @@
+<h1>Encuentrame en views/profiles/show.html.erb</h1>
+
+
+<% if @profile  %>
+    <%= @profile.inspect %> <br>
+
+    <%= @profile.name %>
+    <%= @profile.last_name %>
+    <%= @profile.rol %>
+    <%= @profile.salary %>
+
+    <%= link_to "Editar Perfil", edit_profile_path(@profile) %>
+  <% else %>
+    <%= link_to "Crear Nuevo Perfil", new_profile_path %>
+<% end %>
+
+<hr>
