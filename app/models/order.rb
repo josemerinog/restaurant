@@ -10,6 +10,6 @@
 #
 
 class Order < ApplicationRecord
-  has_many :plates
-  belongs_to :user 
+  has_and_belongs_to_many :plates
+  belongs_to :user
 end
